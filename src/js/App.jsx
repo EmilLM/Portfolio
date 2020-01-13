@@ -1,12 +1,11 @@
 import React from 'react';
 import Header from "./Header.jsx";
-import NavBar from "./NavBar.jsx";
+import NavBar from "./Nav/NavBar.jsx";
 import Content from "./Content.jsx";
 import Footer from "./Footer.jsx";
 
 
-export default class App extends React.Component {
-  render() {
+export default function App() {
     return (
         <>
           <Header />
@@ -15,5 +14,4 @@ export default class App extends React.Component {
           <Footer/>
         </>
     )
-  }
 }

@@ -1,0 +1,35 @@
+.modal-content {
+  background-image: url("../assets/modal_bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: white;
+  border: 2px solid navy;
+
+  .modal-body {
+    padding: 2vmax;
+
+  }
+  .close {
+    color: white;
+    outline: none;
+  }
+  h5 {
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px blue;
+  }
+  ol {
+    padding: 10px;
+    li {
+      padding: 10px;
+    }
+  }
+}
+.form-group {
+  padding: 0 15px;
+}
+#messageArea {
+  height: 100px;
+}
