@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Popover, PopoverHeader, PopoverBody } from 'reactstrap';
+import {Tooltip } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 
@@ -11,13 +11,12 @@ export default function Mail() {
 
     return (
         <>
-            <a id="Popover1" href="mailto:luchianemil@gmail.com" data-toggle="collapse" rel="noreferrer">
+            <a id="mail" href="mailto:luchianemil@gmail.com"  rel="noreferrer">
                 <FontAwesomeIcon icon={faEnvelopeSquare} />
             </a>
-            <Popover placement="bottom"  isOpen={popoverOpen} target="Popover1" toggle={toggle}>
-                <PopoverHeader>Gmail address:</PopoverHeader>
-                <PopoverBody>LUCHIANEMIL@GMAIL.COM</PopoverBody>
-            </Popover>
+            <Tooltip placement="bottom"  isOpen={popoverOpen} target="mail" toggle={toggle}>
+                luchianemil@gmail.com
+            </Tooltip>
         </>
     );
 };

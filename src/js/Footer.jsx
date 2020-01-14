@@ -1,5 +1,5 @@
 import React from 'react';
-import Mail from "./Popover.jsx";
+import Mail from "./Mail.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
