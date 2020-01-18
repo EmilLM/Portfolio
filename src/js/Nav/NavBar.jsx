@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import { Collapse, Navbar, NavbarToggler,Nav} from 'reactstrap';
+import { Collapse, Navbar,Nav} from 'reactstrap';
 import Modal from "../Modal/Modal.jsx"
 import About from "../Modal/About.jsx"
 import Contact from "../Modal/Contact.jsx";
 import Plans from "../Modal/Plans.jsx";
 import NavItem from "./NavItem.jsx"
+import NavToggle from "./NavToggle.jsx";
 
 
 export default function NavBar() {
@@ -28,15 +29,14 @@ export default function NavBar() {
         return (
             <section className='nav_section'>
                 <Navbar className="navbar navbar-expand-sm  navbar-dark container ">
-                    <NavbarToggler onClick={toggleNavBar}  />
-                    <Collapse isOpen={!navToggle}>
+                    <NavToggle onToggle={toggleNavBar} class={navToggle}/>
+                    <Collapse isOpen={navToggle} >
                         <Nav>
                             <NavItem onToggle={aboutToggle} title={"About"}>
                                 <Modal isOpen={about} title={"About"} onToggle={aboutToggle}>
                                     <About/>
                                 </Modal>
                             </NavItem>
-
                             <NavItem onToggle={plansToggle} title={"Plans"}>
                                 <Modal isOpen={plans} title={"Plans"} onToggle={plansToggle}>
                                     <Plans/>

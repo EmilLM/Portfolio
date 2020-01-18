@@ -5,16 +5,16 @@ import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Mail() {
-    const [popoverOpen, setPopoverOpen] = useState(false);
+    const [show, setShow] = useState(false);
 
-    const toggle = () => setPopoverOpen(!popoverOpen);
+    const toggle = () => setShow(!show);
 
     return (
         <>
             <a id="mail" href="mailto:luchianemil@gmail.com"  rel="noreferrer">
                 <FontAwesomeIcon icon={faEnvelopeSquare} />
             </a>
-            <Tooltip placement="bottom"  isOpen={popoverOpen} target="mail" toggle={toggle}>
+            <Tooltip placement="bottom"  isOpen={show} target="mail" toggle={toggle}>
                 luchianemil@gmail.com
             </Tooltip>
         </>
