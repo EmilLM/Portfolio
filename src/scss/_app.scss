@@ -8,16 +8,16 @@
   src: url("../assets/fonts/RussoOne-Regular.ttf");
 }
 body {
-  background-image: url("../assets/bg1.webp");
+  background-image: url("../assets/modal_bg.webp");
   background-size: cover;
   background-position: center;
 
 }
 #root {
   height: 100vh;
-  @media (min-width: 1200px) {
-    height: 115vh;
-  }
+  //@media (min-width: 1200px) {
+  //  height: 115vh;
+  //}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,10 +39,10 @@ header {
       margin-top: 35px;
       //text-shadow: 0 0 10px yellow;
       font-weight: 700;
-      font-size: 6vmax;
+      font-size: 5.5vmax;
       font-family: 'Iceland', cursive;
       @media (min-width: 992px) {
-        font-size: 70px;
+        font-size: 80px;
         margin-top: 50px;
       }
     }
@@ -59,11 +59,7 @@ header {
   }
 }
 .nav_section {
-  height: 5vh;
-  position: relative;
-  @media (min-width: 992px) {
-    height: 7vh;
-  }
+  height: 50px;
   .navbar {
     .collapse {
       @media (min-width: 767px) {
@@ -75,7 +71,7 @@ header {
     }
     .nav-link {
       @media (max-width: 330px) {
-        padding: 8px 6px !important;
+        padding: 8px 3px !important;
       }
     }
   }
@@ -152,17 +148,18 @@ main {
 
 footer {
   .container {
-    height: 12vh;
     //max-height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     .mail {
       width: 50%;
+
       img {
         width: 10%;
         height: auto;
         min-width: 22px;
+
       }
       span {
         padding-left: 10px;
@@ -173,7 +170,7 @@ footer {
     }
     #mail {
       color: blue;
-      font-size: 30px;
+      font-size: 4vh;
       &:hover {
         color: white;
       }
@@ -187,7 +184,7 @@ footer {
       line-height: 50%;
       a {
         color: blue;
-        font-size: 30px;
+        font-size: 4vh;
         margin-left: 20px;
         &:hover {
           color: white;
