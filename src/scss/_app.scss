@@ -1,4 +1,4 @@
-@import 'variables';
+
 @font-face {
   font-family: 'Iceland';
   src: url("../assets/fonts/Iceland-Regular.ttf");
@@ -26,7 +26,6 @@ body {
 }
 header {
   .container{
-    //background: $gradient1;
     height: 18vh;
     min-height: 80px;
     max-height: 190px;
@@ -37,7 +36,6 @@ header {
     h3 {
       color: white;
       margin-top: 35px;
-      //text-shadow: 0 0 10px yellow;
       font-weight: 700;
       font-size: 5.5vmax;
       font-family: 'Iceland', cursive;
@@ -59,8 +57,12 @@ header {
   }
 }
 .nav_section {
-  height: 50px;
+  height: 60px;
+  display: flex;
+  margin-top: 10px;
   .navbar {
+    font-family: 'Iceland', cursive;
+    font-size: 18px;
     .collapse {
       @media (min-width: 767px) {
         display: block !important;
@@ -75,22 +77,14 @@ header {
       }
     }
   }
-  //Menu button @bottom
-
 }
 
-
+//Carousel styles
 main {
-  margin-top: 10px;
-  .container {
+  height: 50vh;
+  @media (min-width: 1025px) {
     height: 65vh;
-    min-height: 440px;
-    padding: 0;
-    @media (min-width: 768px) {
-      min-height: 570px;
-    }
   }
-
   .carousel-inner {
     //margin-top: -25px;
     padding-bottom: 50px;
@@ -143,24 +137,19 @@ main {
   }
   .carousel-indicators {
     bottom: -10px;
+
   }
 }
 
 footer {
+  margin-top: -20px;
   .container {
-    //max-height: 120px;
+    padding-bottom: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     .mail {
       width: 50%;
-
-      img {
-        width: 10%;
-        height: auto;
-        min-width: 22px;
-
-      }
       span {
         padding-left: 10px;
         text-transform: uppercase;

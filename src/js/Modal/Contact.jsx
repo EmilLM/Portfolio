@@ -9,7 +9,6 @@ export default function Contact() {
         messageInput: ""
     });
     const {nameInput, emailInput, messageInput} = formState;
-
     const isEnabled= nameInput.length > 0 && emailInput.length > 0 && messageInput.length > 0;
 
     const handleChange = e => {
@@ -17,7 +16,9 @@ export default function Contact() {
             ...formState,
             [e.target.name] : e.target.value,
         })
-
+    };
+    const handleSelect = e => {
+        e.target.setSelectionRange(0, e.target.value.length)
     };
     const [errors, setErrors] = useState({
         isValid: false,
@@ -49,23 +50,28 @@ export default function Contact() {
                    <Input name="nameInput" autoComplete="off"
                           value={nameInput}
                           onChange={handleChange}
+                          onClick={handleSelect}
                           noValidate valid={Boolean(nameInput)}
+
                    />
-                   {/*<FormText>Anything will do. Practicing validation with hooks!</FormText>*/}
                    <FormFeedback valid>Sweet! It works.</FormFeedback>
                </FormGroup>
                <FormGroup>
                    <Label for="emailInput">Email:</Label>
                    <Input  type={"text"} name="emailInput"
-                           value={emailInput} onChange={handleChange} noValidate
+                           value={emailInput} onChange={handleChange}
+                           onClick={handleSelect} noValidate
                            valid={emailInput.includes('@')} invalid={errors.isInvalid}
                    />
-                   <FormFeedback valid >Hmm, this looks like an email address!</FormFeedback>
-                   {/*<FormFeedback invalid={errors.isValid} >Wrong</FormFeedback>*/}
+                   <FormFeedback valid>Hmm, this looks like an email address!</FormFeedback>
                </FormGroup>
                <FormGroup>
                    <Label for="messageInput">Message:</Label>
-                   <Input type="textarea" name="messageInput" value={messageInput} onChange={handleChange} id="messageArea"/>
+                   <Input type="textarea" name="messageInput" id="messageArea"
+                          value={messageInput}
+                          onChange={handleChange}
+                          onClick={handleSelect}
+                   />
                </FormGroup>
                <button type="submit" className="btn btn-primary" disabled={!isEnabled} >Submit</button>
            </Form>

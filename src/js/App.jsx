@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "./Header.jsx";
 import NavBar from "./Nav/NavBar.jsx";
 import Content from "./Content.jsx";
-import Footer from "./Footer.jsx";
+import Footer from "./Footer/Footer.jsx";
 import {Ripple} from "react-preloaders";
 
 export default function App() {

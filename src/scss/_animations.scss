@@ -1,4 +1,6 @@
 
+
+
 #afterSubmit {
   animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   @keyframes scale-up-center {
@@ -11,7 +13,6 @@
     }
   }
 }
-
 
 
 .text-flicker-in-glow {
@@ -225,15 +226,9 @@
 
 //Nav item neon animation
 
-
 .nav_neon {
   border-radius: 10px;
   text-transform: uppercase;
-
-  //&::selection {
-  //  background-color: lightskyblue;
-  //  color: red;
-  //}
   &:hover {
     animation: flicker 1.5s infinite alternate;
     border: 2px solid #fff;
