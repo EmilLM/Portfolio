@@ -9,7 +9,7 @@ import NavToggle from "./NavToggle.jsx";
 
 
 export default function NavBar() {
-
+    console.log('navbar render')
     //NavToggler event
     const [navToggle, setNavToggle] = useState(false);
     const toggleNavBar = () => setNavToggle(!navToggle);

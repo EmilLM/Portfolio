@@ -77,6 +77,16 @@ header {
       }
     }
   }
+  .nav_neon {
+    border-radius: 10px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    &:hover {
+      animation: flicker 1.5s infinite alternate;
+      border: 2px solid #fff;
+      color: red;
+    }
+  }
 }
 
 //Carousel styles

@@ -226,15 +226,7 @@
 
 //Nav item neon animation
 
-.nav_neon {
-  border-radius: 10px;
-  text-transform: uppercase;
-  &:hover {
-    animation: flicker 1.5s infinite alternate;
-    border: 2px solid #fff;
-    color: red;
-  }
-}
+
 @keyframes flicker {
 
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {

@@ -10,7 +10,8 @@ export default function Contact() {
     });
     const {nameInput, emailInput, messageInput} = formState;
     const isEnabled= nameInput.length > 0 && emailInput.length > 0 && messageInput.length > 0;
-
+  
+    
     const handleChange = e => {
         setFormState({
             ...formState,
@@ -37,7 +38,7 @@ export default function Contact() {
             })
         }
     };
-
+    console.log(nameInput);
     return(
         <>
         {errors.isValid && nameInput && emailInput && messageInput
@@ -54,7 +55,7 @@ export default function Contact() {
                           noValidate valid={Boolean(nameInput)}
 
                    />
-                   <FormFeedback valid>Sweet! It works.</FormFeedback>
+                   <FormFeedback valid>Great name!</FormFeedback>
                </FormGroup>
                <FormGroup>
                    <Label for="emailInput">Email:</Label>
