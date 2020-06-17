@@ -17,10 +17,10 @@ export default function Footer() {
                 <span>{year}</span>
             </div>
             <div className='links'>
-                <a  href='https://github.com/EmilLM' target={'_blank'} rel="noreferrer">
+                <a  href='https://github.com/EmilLM' target={'_blank'} rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGithubSquare} />
                 </a>
-                <a  href='https://www.linkedin.com/in/emil-luchian-9933b198/' target={'_blank'} rel="noreferrer">
+                <a  href='https://www.linkedin.com/in/emil-luchian-9933b198/' target={'_blank'} rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} />
                 </a>
             </div>
