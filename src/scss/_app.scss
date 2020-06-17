@@ -1,4 +1,15 @@
+*, *:before, *:after {
+  box-sizing: border-box; 
+}
 
+html {
+  font-size: 65%;
+  transition: font-size 0.2s linear;
+  
+  @media (min-width: 70em) {
+    font-size: 100%;
+  }
+}
 @font-face {
   font-family: 'Iceland';
   src: url("../assets/fonts/Iceland-Regular.ttf");
@@ -7,62 +18,85 @@
   font-family: 'RussoOne';
   src: url("../assets/fonts/RussoOne-Regular.ttf");
 }
+
 body {
-  background-image: url("../assets/modal_bg.webp");
-  background-size: cover;
-  background-position: center;
-
+  position: relative;
+  z-index: 999;
+  background-image: url("../assets/bg2.webp");
+  background-size: 100% 50%;
+  background-position: left top;
+  background-repeat: no-repeat;
+  color: #fff;
+  transition: height 0.8s ease-out;
+  &::after {
+    position: absolute;
+    content: "";
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: black;
+  }
 }
-#root {
-  height: 100vh;
-  //@media (min-width: 1200px) {
-  //  height: 115vh;
-  //}
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
-
+.bg0, .bg1, .bg2, .bg3{
+  // position: relative;
+  z-index: 999;
+  cursor: pointer;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
+  color: lightgrey;
+  text-shadow: 0 0 3px black;
+  
+  &:hover {
+    filter: grayscale(0);
+    color: white;
+    text-shadow: 0 0 15px blue;
+  }
 }
+
+
 header {
-  .container{
-    height: 18vh;
-    min-height: 80px;
-    max-height: 190px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h3 {
-      color: white;
-      margin-top: 35px;
-      font-weight: 700;
-      font-size: 5.5vmax;
-      font-family: 'Iceland', cursive;
-      @media (min-width: 992px) {
-        font-size: 80px;
-        margin-top: 50px;
-      }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h3 {
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 6vmax;
+    margin: 0;
+    font-family: 'Iceland', cursive;
+    @media (min-width: 992px) {
+      font-size: 62px;
     }
-    p {
-      font-size: 3.5vmax;
-      color: black;
-      font-family: "RussoOne", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 3px;;
-      @media (min-width: 992px) {
-        font-size: 40px;
-      }
+  }
+  p {
+    font-size: 3.5vmax;
+    color: black;
+    font-family: "RussoOne", sans-serif;
+    text-transform: uppercase;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    @media (min-width: 992px) {
+      font-size: 40px;
     }
   }
 }
+    
+  
+
 .nav_section {
   height: 60px;
   display: flex;
-  margin-top: 10px;
   .navbar {
     font-family: 'Iceland', cursive;
-    font-size: 18px;
+    font-size: 22px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
     .collapse {
       @media (min-width: 767px) {
         display: block !important;
@@ -76,112 +110,90 @@ header {
         padding: 8px 3px !important;
       }
     }
+    
+  }
+  .logo {
+    height: 25px;
+    width: 50px;
+    display: none;
+    margin: 17px 50px 0 0;
+    @media (min-width: 460px) {
+      display: block;
+    }
   }
 }
 
-//Carousel styles
-main {
-  height: 50vh;
-  @media (min-width: 1025px) {
-    height: 65vh;
-  }
-  .carousel-inner {
-    //margin-top: -25px;
-    padding-bottom: 50px;
-    z-index: 0;
-    .carousel-item {
-      height: auto;
-      width: 100%;
-      margin-bottom: 50px;
-      @media (min-width: 992px) and (max-width: 1199px) {
-        width: 90%;
-        margin-left: 5%;
-      }
-      @media (min-width: 1200px) {
-        width: 50%;
-        height: auto;
-        margin-left: 25%;
-      }
-      .carousel-caption {
-        display: block !important;
-        color: white;
-        text-shadow: 0 0 8px blue;
-        bottom: -100px;
-        p {
-          font-size: 14px;
-          color: blue;
-        }
-        h3{
-          font-size: 18px;
-          font-weight: 700;
-        }
-        @media (min-width: 991px) {
-          p{
-            font-size: 18px;
-          }
-          h3 {
-            font-size: 22px;
-          }
-        }
-      }
-    }
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      opacity: 0.7;
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-  .carousel-indicators {
-    bottom: -10px;
 
+.project {
+  margin-top: 30px;
+}
+.appImage {
+  width: auto;
+  height: 150px;
+  margin-bottom: 30px;
+  @media (min-width: 370px) and (max-width: 576px) {
+    height: 200px;
   }
+  @media (min-width: 768px) {
+    height: 350px;
+  }
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 16px;
 }
 
 footer {
-  margin-top: -20px;
-  .container {
-    padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .mail {
+    // width: 50%;
+    span {
+      padding-left: 10px;
+      text-transform: uppercase;
+      font-size: 1.2vmax;
+      color: white;
+    }
+  }
+  #mail {
+    color: blue;
+    font-size: 4vh;
+    &:hover {
+      color: white;
+    }
+  }
+  .date {
+    display: flex;
+
+    align-items: center;
+    color: gray;
+    p {
+      margin-right: 5px;
+      margin-bottom: 0;
+      
+    }
+  }
+  .links {
+    // width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    .mail {
-      width: 50%;
-      span {
-        padding-left: 10px;
-        text-transform: uppercase;
-        font-size: 1.2vmax;
-        color: white;
-      }
-    }
-    #mail {
+    justify-content: flex-end;
+    // line-height: 50%;
+    a {
       color: blue;
       font-size: 4vh;
+      margin-left: 20px;
       &:hover {
         color: white;
       }
     }
-    .links {
-      width: 90%;
-      flex-direction: row;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      line-height: 50%;
-      a {
-        color: blue;
-        font-size: 4vh;
-        margin-left: 20px;
-        &:hover {
-          color: white;
-        }
-      }
-    }
   }
 }
+
 
 //Menu button
 
@@ -252,3 +264,5 @@ footer {
 #burger.active .burger-bar--3 {
   transform: rotate(-45deg);
 }
+
+

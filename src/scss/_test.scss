@@ -1,0 +1,111 @@
+:root {
+    --width: 100vw;
+    --full-width: 100vw;
+    
+    @media (min-width: 42em) {
+      --width: 42rem;
+    }
+    
+    --angle: -11deg;
+    /*-----------------
+    Magic Number Alert:
+    
+    the 0.09719 is calculated by this formula:
+    tan(11°) / 2
+    11° is the current skewY value.
+    ------------------*/
+    --magic-number: 0.09719;
+    --skew-padding: calc(var(--width) * var(--magic-number));
+    --clip-padding: calc(var(--full-width) * var(--magic-number));
+  }
+  
+  .diagonal-box {
+    position: relative;
+    padding: var(--skew-padding) 0;
+    margin-top: -1px;
+    
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transform: skewy(var(--angle));
+      transform-origin: 50% 0;
+      outline: 1px solid transparent;
+      backface-visibility: hidden;
+    }
+  }
+  
+  @mixin bgProps {
+    background-size: 100% 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+  .bg0::before {
+    background-image: url("../assets/bg1.webp");
+    @include bgProps;
+  }
+  
+  .bg1::before {
+    background-image: url("../assets/aurora1.jpg");
+    @include bgProps;
+  }
+  
+  .bg2::before {
+    background-image: url("../assets/w4.jpg");
+    @include bgProps;
+  }
+  .bg3::before {
+    background-image: url("../assets/w1.jpg");
+    @include bgProps;
+  }
+  
+  
+  .content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: 1.5em;
+    position: relative;
+    
+    /* -----------
+    enable the border to see, that the content
+    perfectly fits into the section without
+    bleeding into the adjecting areas:
+    ------------ */
+    // border: 2px dashed #fff8;
+  }
+  
+  /* --------------------
+  Clip Path Update
+  -------------------- */
+  
+  .clip-path {
+    position: relative;
+    margin-top: calc( ( var(--clip-padding) * -1 ) - 2px );
+    background-image: url("../assets/bg2.webp");
+    background-size: 100% 100%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    
+    padding: calc( ( var(--clip-padding) * 2 ) - ( var(--clip-padding) - var(--skew-padding) ) ) 0 4em;
+    clip-path: polygon(
+      0% calc(var(--clip-padding) * 2), 
+      100% 0%, 
+      100% 100%, 
+      0% 100% );
+    -webkit-clip-path: polygon(
+      0% calc(var(--clip-padding) * 2), 
+      100% 0%, 
+      100% 100%, 
+      0% 100% );
+  }
+  
+
+  
+  

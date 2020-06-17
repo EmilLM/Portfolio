@@ -6,7 +6,7 @@ import Contact from "../Modal/Contact.jsx";
 import Plans from "../Modal/Plans.jsx";
 import NavItem from "./NavItem.jsx"
 import NavToggle from "./NavToggle.jsx";
-
+import logo from "../../assets/logo.png"
 
 export default function NavBar() {
 
@@ -50,6 +50,7 @@ export default function NavBar() {
                         </Nav>
                     </Collapse>
                 </Navbar>
+                <img className="logo" src={logo} alt="logo"/>
             </section>
 
         )
