@@ -54,7 +54,7 @@ export default function Contact() {
                           noValidate valid={Boolean(nameInput)}
 
                    />
-                   <FormFeedback valid>Sweet! It works.</FormFeedback>
+                   <FormFeedback valid>Cool name!</FormFeedback>
                </FormGroup>
                <FormGroup>
                    <Label for="emailInput">Email:</Label>
@@ -63,7 +63,7 @@ export default function Contact() {
                            onClick={handleSelect} noValidate
                            valid={emailInput.includes('@')} invalid={errors.isInvalid}
                    />
-                   <FormFeedback valid>Hmm, this looks like an email address!</FormFeedback>
+                   <FormFeedback valid>Seems alright!</FormFeedback>
                </FormGroup>
                <FormGroup>
                    <Label for="messageInput">Message:</Label>

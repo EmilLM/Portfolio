@@ -22,7 +22,7 @@
   .diagonal-box {
     position: relative;
     padding: var(--skew-padding) 0;
-    margin-top: -1px;
+    margin-top: -2px;
     
     &:before {
       content: "";
@@ -42,6 +42,10 @@
     background-size: 100% 100%;
     background-position: left top;
     background-repeat: no-repeat;
+  }
+  .bgAbout::before {
+    background-image: url("../assets/bgAbout.jpg");
+    @include bgProps;
   }
   .bg0::before {
     background-image: url("../assets/bg1.webp");
@@ -72,6 +76,9 @@
     margin: 0 auto;
     padding: 1.5em;
     position: relative;
+    h1 {
+      margin-bottom: 40px;
+    }
     
     /* -----------
     enable the border to see, that the content
@@ -89,7 +96,7 @@
     position: relative;
     margin-top: calc( ( var(--clip-padding) * -1 ) - 2px );
     background-image: url("../assets/bg2.webp");
-    background-size: 100% 100%;
+    background-size: 101% 100%;
     background-position: right bottom;
     background-repeat: no-repeat;
     

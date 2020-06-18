@@ -1,10 +1,15 @@
 import React from 'react';
 import Footer from '../Footer/Footer'
+import ContactLinks from '../Footer/ContactLinks'
 
 const FooterBox = () => {
     return ( 
-        <div className="clip-path">
-            <div className="content">
+        <div className="clip-path" id="contact">
+            <div className="content contact">
+                <h1 className="sectionTitle">Contact</h1>
+                <strong>Interested in working with me? Find me at:</strong>
+                
+                <ContactLinks/>
                 <Footer/>
             </div>
         </div>

@@ -3,9 +3,9 @@
 }
 
 html {
-  font-size: 65%;
+  font-size: 75%;
   transition: font-size 0.2s linear;
-  
+  scroll-behavior: smooth; 
   @media (min-width: 70em) {
     font-size: 100%;
   }
@@ -20,43 +20,114 @@ html {
 }
 
 body {
-  position: relative;
-  z-index: 999;
   background-image: url("../assets/bg2.webp");
-  background-size: 100% 50%;
+  background-size: 100% 30%;
   background-position: left top;
   background-repeat: no-repeat;
-  color: #fff;
-  transition: height 0.8s ease-out;
-  &::after {
-    position: absolute;
-    content: "";
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    background: black;
+  
+}
+
+
+.active {
+  background: rgb(4, 21, 32);
+  border-radius: 5px;
+  
+}
+.about {
+  color: white;
+  .aboutCode {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 20px;
+    color: rgb(6, 167, 6);
+    font-weight: 500;
+    span {
+      color: blue;
+      font-weight: 500;
+    }
+  }
+  p {
+    text-align: center;
+    span {
+      color: cornflowerblue;
+    }
+  }
+  .sub {
+    margin: 10px 0;
+    font-size: 23px;
+    font-weight: 700;
+    color: cornflowerblue;
+  }
+  h2 {
+    margin-top: 40px;
   }
 }
 
 .bg0, .bg1, .bg2, .bg3{
-  // position: relative;
+  // find out how to exclude projects section title from the hover styles
+  &:not(.sectionTitle) {
   z-index: 999;
-  cursor: pointer;
   transition: filter 0.5s ease;
   filter: grayscale(100%);
   color: lightgrey;
-  text-shadow: 0 0 3px black;
+    &:hover {
+      filter: grayscale(0);
+      color: white;
+      text-shadow: 0 0 15px blue;
+    }
+  }
   
-  &:hover {
-    filter: grayscale(0);
-    color: white;
-    text-shadow: 0 0 15px blue;
+}
+.isActive {
+  color: white !important;
+}
+.nav_section {
+  height: 60px;
+  display: flex;
+#scrolling {
+  border-bottom: 2px solid white;
+  background: rgb(2, 2, 34);
+} 
+  .navbar {
+    font-family: 'Iceland', cursive;
+    font-size: 22px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    .collapse {
+      @media (min-width: 767px) {
+        display: block !important;
+      }
+    }
+    .nav-item {
+      margin: 0 5px;
+      @media (max-width: 410px){
+        margin: 0;
+        padding: 0 ;
+      }
+    }
+    .nav-link {
+      padding: 0 12px;
+      @media (max-width: 400px) {
+        padding: 0 3px;
+      }
+      @media (max-width: 325px) {
+        padding: 0;
+      }
+    }
+    
+  }
+  .logo {
+    height: 30px;
+    width: 60px;
+    display: none;
+    // margin: 17px 50px 0 0;
+    @media (min-width: 470px) {
+      display: block;
+    }
   }
 }
-
 
 header {
   display: flex;
@@ -72,60 +143,28 @@ header {
     @media (min-width: 992px) {
       font-size: 62px;
     }
-  }
-  p {
-    font-size: 3.5vmax;
-    color: black;
-    font-family: "RussoOne", sans-serif;
-    text-transform: uppercase;
-    margin: 0 auto;
-    letter-spacing: 3px;
-    @media (min-width: 992px) {
-      font-size: 40px;
-    }
-  }
+  }  
 }
     
-  
+ .sectionTitle {
+   font-size: 4vmax;
+   color: transparent !important;
+   text-transform: uppercase;
+   font-family: 'RussoOne';
+   background: linear-gradient(to right, #1a2980, #26d0ce);
+   background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+ } 
 
-.nav_section {
-  height: 60px;
-  display: flex;
-  .navbar {
-    font-family: 'Iceland', cursive;
-    font-size: 22px;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: flex-start;
-    .collapse {
-      @media (min-width: 767px) {
-        display: block !important;
-      }
-    }
-    .nav-item {
-      margin: 0 5px;
-    }
-    .nav-link {
-      @media (max-width: 330px) {
-        padding: 8px 3px !important;
-      }
-    }
-    
-  }
-  .logo {
-    height: 25px;
-    width: 50px;
-    display: none;
-    margin: 17px 50px 0 0;
-    @media (min-width: 460px) {
-      display: block;
-    }
-  }
-}
+
 
 
 .project {
-  margin-top: 30px;
+  h1 {
+    font-family: 'Iceland', cursive;
+    font-weight: 700;
+    font-size: 50px;
+  }
 }
 .appImage {
   width: auto;
@@ -144,45 +183,40 @@ header {
   justify-content: space-evenly;
   align-items: center;
   font-size: 16px;
+  
 }
-
-footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  .mail {
-    // width: 50%;
-    span {
-      padding-left: 10px;
-      text-transform: uppercase;
-      font-size: 1.2vmax;
+.iconLinks {
+  margin-top: 10px;
+  a {
+    margin: 15px;
+    &:hover {
       color: white;
+      text-decoration: none;
     }
   }
-  #mail {
+}
+
+.contact {
+  strong {
+    margin: 20px 0;
+    color: white;
+  }
+  .iconContact {
+    font-size: 18px;
+    margin-bottom: 10px;
     color: blue;
-    font-size: 4vh;
+    text-decoration: none;
     &:hover {
       color: white;
     }
   }
-  .date {
-    display: flex;
-
-    align-items: center;
-    color: gray;
-    p {
-      margin-right: 5px;
-      margin-bottom: 0;
-      
-    }
-  }
+  
   .links {
-    // width: 90%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    // line-height: 50%;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    
     a {
       color: blue;
       font-size: 4vh;
@@ -192,6 +226,26 @@ footer {
       }
     }
   }
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  .date {
+    display: flex;
+    align-items: center;
+    color: gray;
+    margin-top: 20px;
+    p {
+      margin-right: 5px;
+      margin-bottom: 0;
+      
+    }
+  }
+  
 }
 
 

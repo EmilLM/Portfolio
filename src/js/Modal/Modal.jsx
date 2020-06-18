@@ -1,14 +1,14 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody, } from 'reactstrap';
 
-export default function Modals(props)  {
+export default function Modals({isOpen, onToggle, title, children })  {
 
     return (
         <div>
-            <Modal isOpen={props.isOpen} toggle={props.onToggle} centered>
-                <ModalHeader toggle={props.onToggle}>{props.title} </ModalHeader>
+            <Modal isOpen={isOpen} toggle={onToggle} centered>
+                <ModalHeader toggle={onToggle}>{title} </ModalHeader>
                 <ModalBody>
-                    {props.children}
+                    {children}
                 </ModalBody>
             </Modal>
         </div>

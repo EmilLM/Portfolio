@@ -8,39 +8,44 @@ import chatAway from "./assets/ChatAway.jpg"
         _id: 0,
         src: chatAway,
         link: 'link',
+        sourceLink: 'https://github.com/EmilLM/ChatApp',
         altText: 'ChatAway image',
         title: 'ChatAway',
         description: 'Slack-type chat app',
-        stack: 'Made with: Next.js, Express, MongoDB'
+        stack: 'Next.js - Express - MongoDB',
+        sectionTitle: 'Projects'
 
     }, 
     {
         _id: 1,
         src: CV,
         link: 'https://emilscv.web.app',
+        sourceLink: 'https://github.com/EmilLM/My-CV',
         altText: 'CV image',
-        title: 'Curriculum Vitae',
+        title: 'CV',
         description: 'CV website',
-        stack: 'Made with: Vue, Bootstrap4'
+        stack: 'Vue - Bootstrap4'
 
     },
     {
         _id: 2,
         src: countryInfo,
         link: 'https://emillm.github.io',
+        sourceLink: 'https://github.com/EmilLM/CountryInfo',
         altText: 'CountryInfo app',
         title: 'CountryInfo',
         description: 'Socio-economic country statistics',
-        stack: 'Made with: React, Scss, reactstrap'
+        stack: 'React - Scss - reactstrap'
     },
     {
         _id: 3,
         src: weatherApp,
         link: 'https://vremeacl.web.app',
+        sourceLink: 'https://github.com/EmilLM/Weather-app',
         altText: 'Weather App image',
         title: 'Weather App',
         description: 'Weather app for all cities',
-        stack: 'Made with: jQuery, Ajax, Scss'
+        stack: 'jQuery - Ajax - Scss'
     }
 ];
 

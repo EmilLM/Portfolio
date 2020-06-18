@@ -1,12 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Collapse, Navbar,Nav} from 'reactstrap';
-import Modal from "../Modal/Modal.jsx"
-import About from "../Modal/About.jsx"
-import Contact from "../Modal/Contact.jsx";
-import Plans from "../Modal/Plans.jsx";
-import NavItem from "./NavItem.jsx"
 import NavToggle from "./NavToggle.jsx";
 import logo from "../../assets/logo.png"
+import Scrollspy from 'react-scrollspy'
 
 export default function NavBar() {
 
@@ -14,43 +10,37 @@ export default function NavBar() {
     const [navToggle, setNavToggle] = useState(false);
     const toggleNavBar = () => setNavToggle(!navToggle);
 
-    //About Modal event
-    const [about, setAbout] = useState(false);
-    const aboutToggle = () => setAbout(!about);
+    const [offset, setOffset] = useState(false);
 
-    //Plans Modal event
-    const [plans, setPlans] = useState(false);
-    const plansToggle = () => setPlans(!plans);
-
-    //Contact Modal event
-    const [contact, setContact] = useState(false);
-    const contactToggle = () => setContact(!contact);
-
+    useEffect(() => {
+        window.onscroll = () => {
+            if (window.pageYOffset > 60) {
+                setOffset(true)
+            } else setOffset(false)
+        }
+    }, [offset]);
+    console.log(offset);
         return (
             <section className='nav_section'>
-                <Navbar className="navbar navbar-expand-sm  navbar-dark container ">
+                <Navbar className="navbar navbar-expand-sm navbar-dark " 
+                fixed="top" id={offset ? "scrolling": null}>
                     <NavToggle onToggle={toggleNavBar} class={navToggle}/>
                     <Collapse isOpen={navToggle} >
                         <Nav>
-                            <NavItem onToggle={aboutToggle} title={"About"}>
-                                <Modal isOpen={about} title={"About"} onToggle={aboutToggle}>
-                                    <About/>
-                                </Modal>
-                            </NavItem>
-                            <NavItem onToggle={plansToggle} title={"Plans"}>
-                                <Modal isOpen={plans} title={"Plans"} onToggle={plansToggle}>
-                                    <Plans/>
-                                </Modal>
-                            </NavItem>
-                            <NavItem onToggle={contactToggle} title={"Contact"}>
-                                <Modal isOpen={contact} title={"Contact"} onToggle={contactToggle}>
-                                    <Contact/>
-                                </Modal>
-                            </NavItem>
+                            <Scrollspy items={['about', 'projects', 'contact']} 
+                                currentClassName="active"
+                                componentTag={"div"} 
+                                style={{display: "flex"}}
+                            >
+                            <li className="nav-item"> <a className="nav-link" href="#about">About</a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="#projects">Projects</a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="#contact">Contact</a> </li>
+                            </Scrollspy>
                         </Nav>
                     </Collapse>
+                    <img className="logo" src={logo} alt="logo"/>
                 </Navbar>
-                <img className="logo" src={logo} alt="logo"/>
+                
             </section>
 
         )

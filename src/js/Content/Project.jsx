@@ -1,31 +1,34 @@
-import React, {useState} from 'react';
-import { Collapse } from 'reactstrap';
+import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import {faLaptopCode} from '@fortawesome/free-solid-svg-icons'
 
 const Project = (props) => {
 
-    const {id, src, link, altText, title, description, stack} = props;
-    const [isOpen, setIsOpen] = useState(false)
-     const toggle = () => setIsOpen(!isOpen);
+    const {id, src, link, source, altText, title, description, stack, sectionTitle} = props;
+    
 
     return ( 
-        <div className={`diagonal-box bg${id}`} onClick={toggle}>
-            <div className="content">
+        <div className={`diagonal-box bg${id}`}>
+            <div className="content project">
+                {sectionTitle?<h2 className="sectionTitle">{sectionTitle}</h2>: null}
                 <h1> &lt; {title} &gt;</h1>
-
-                <Collapse isOpen={isOpen} className="project">
-                    <a href={link} target="_blank" rel="noopener noreferrer">
-                        <img className="appImage" src={src} alt={altText}/>
-                    </a>
+                    <img className="appImage" src={src} alt={altText}/>
                     <div className="description">
                         <p>{description}</p>
-                        <p>{stack}</p>
-                    </div>
-                    
-                </Collapse>
-                
-            </div>
-            
+                        <strong>{stack}</strong>
+                        <div className="iconLinks">
+                            <a href={link} target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faLaptopCode}/>   Demo
+                            </a>   
+                            <a href={source} target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faGithubSquare}/>  Source
+                            </a>
+                        </div>
+                    </div>  
+                   
+            </div> 
         </div>
      );
 }
