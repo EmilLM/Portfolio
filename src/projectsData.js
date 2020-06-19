@@ -11,7 +11,7 @@ import chatAway from "./assets/ChatAway.jpg"
         sourceLink: 'https://github.com/EmilLM/ChatApp',
         altText: 'ChatAway image',
         title: 'ChatAway',
-        description: 'Slack-type chat app',
+        description: 'Slack-type chat app with fully built back-end (work in progress).',
         stack: 'Next.js - Express - MongoDB',
         sectionTitle: 'Projects'
 
@@ -23,7 +23,7 @@ import chatAway from "./assets/ChatAway.jpg"
         sourceLink: 'https://github.com/EmilLM/My-CV',
         altText: 'CV image',
         title: 'CV',
-        description: 'CV website',
+        description: 'Static site of a short and long version of my resume.',
         stack: 'Vue - Bootstrap4'
 
     },
@@ -34,7 +34,7 @@ import chatAway from "./assets/ChatAway.jpg"
         sourceLink: 'https://github.com/EmilLM/CountryInfo',
         altText: 'CountryInfo app',
         title: 'CountryInfo',
-        description: 'Socio-economic country statistics',
+        description: 'Socio-economic statistics about countries.',
         stack: 'React - Scss - reactstrap'
     },
     {
@@ -44,7 +44,7 @@ import chatAway from "./assets/ChatAway.jpg"
         sourceLink: 'https://github.com/EmilLM/Weather-app',
         altText: 'Weather App image',
         title: 'Weather App',
-        description: 'Weather app for all cities',
+        description: "Weather app for all cities. Coder's Lab project. (requires revision).",
         stack: 'jQuery - Ajax - Scss'
     }
 ];

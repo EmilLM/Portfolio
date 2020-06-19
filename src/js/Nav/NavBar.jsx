@@ -27,6 +27,7 @@ export default function NavBar() {
                     <NavToggle onToggle={toggleNavBar} class={navToggle}/>
                     <Collapse isOpen={navToggle} >
                         <Nav>
+                            {/* learn how to avoid rerenders on scroll */}
                             <Scrollspy items={['about', 'projects', 'contact']} 
                                 currentClassName="active"
                                 componentTag={"div"} 
