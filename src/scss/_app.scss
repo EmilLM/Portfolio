@@ -7,13 +7,13 @@ html {
   transition: font-size 0.2s linear;
   scroll-behavior: smooth; 
   @media (min-width: 500px) and (max-width: 792px) {
-    font-size: 120%;
+    font-size: 110%;
   }
   @media (min-width: 793px) and (max-width:992px) {
-    font-size: 140%;
+    font-size: 125%;
   }
   @media (min-width: 993px) {
-    font-size: 160%;
+    font-size: 140%;
   }
 }
 @font-face {
@@ -115,12 +115,6 @@ header {
     margin-bottom: 40px;
     font-family: 'Iceland', cursive;
     text-align: center;
-    // @media (min-width: 992px) {
-    //   font-size: 90px;
-    // }
-    // @media (min-width: 372px) and (max-width: 991px) {
-    //   font-size: 55px;
-    // }
   }  
 }
     
@@ -195,7 +189,7 @@ header {
     height: 350px;
   }
   @media (min-width: 993px) {
-    height: 400px;
+    height: 350px;
   }
 }
 .description {
